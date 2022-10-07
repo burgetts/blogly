@@ -4,15 +4,27 @@
 
 {% block content %}
 <form action="/posts/{{post.id}}/edit" method="post">
+
     <label for="title_edit""> Title:
         <input type="text" name="title_edit" value="{{post.title}}">
     </label>
+
     <label for="content_edit""> Post content:
         <input type="text" name="content_edit" value="{{post.content}}">
-    </label>
-    <button> Edit </button>
+    </label> <br>
+
+    <label> <b> Tags: </b></label>
+    {% for tag in tags %}
+    {% if tag in post.tags %}
+    <br> <input name="tag" type="checkbox" value="{{tag.tag_name}}" checked=true> {{tag.tag_name}}
+    {% else %}
+   <br> <input name="tag" type="checkbox" value="{{tag.tag_name}}"> {{tag.tag_name}} 
+   {% endif %}
+    {% endfor %}
+
+   <br> <button class="btn btn-success"> Edit </button>
 </form>
 <form action="/posts/{{post.id}}">
-    <button> Cancel </button>
+    <button class="btn btn-outline-secondary"> Cancel </button>
 </form>
 {% endblock %}

@@ -8,3 +8,10 @@ img {
     width: 100px;
 }
 
+.tag {
+    background-color: lightblue;
+    width: 100px;
+    color: white;
+    text-align: center;
+    padding: 2px 2px;
+}

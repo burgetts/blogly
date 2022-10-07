@@ -14,9 +14,11 @@ class Blogly(TestCase):
     def setUp(self):
         """Clean up any existing users and create test user."""
         User.query.delete()
-        Post.query.delete()
+        #Post.query.delete()
 
         user = User(first_name="Stevie", last_name="Burgett")
+        #post = Post(title="nice title", content="wow this is content", user_id=user.id)
+        #db.session.add(post)
         db.session.add(user)
         db.session.commit()
 

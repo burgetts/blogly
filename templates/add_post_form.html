@@ -10,6 +10,12 @@
     <label> Content:
         <input name="content" type="text">
     </label>
+
+    <label> <b> Tags: </b></label>
+    {% for tag in tags %}
+   <br> <input name="tag" type="checkbox" value="{{tag.tag_name}}"> {{tag.tag_name}} 
+    {% endfor %}
+
     <button class="btn btn-outline-primary"> Add </button>
 </form>
 
